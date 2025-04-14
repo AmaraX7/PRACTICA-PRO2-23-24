@@ -1,0 +1,274 @@
+\hypertarget{classCjt__Productos}{}\doxysection{Referencia de la Clase Cjt\+\_\+\+Productos}
+\label{classCjt__Productos}\index{Cjt\_Productos@{Cjt\_Productos}}
+
+
+Conjunto de productos.  
+
+
+
+
+{\ttfamily \#include $<$Cjt\+\_\+\+Productos.\+hh$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCjt__Productos_a883f11c37e355d97bf355b19366ab03f}{Cjt\+\_\+\+Productos}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCjt__Productos_a2f976b30f5f983336951978a6e8b1d0c}{$\sim$\+Cjt\+\_\+\+Productos}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCjt__Productos_ad67e452c8f96a969dff77451b1469272}{producto\+\_\+existe}} (int id) const
+\begin{DoxyCompactList}\small\item\em Verifica si el producto con el ID (id) existe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classProducto}{Producto}} \mbox{\hyperlink{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}{get\+\_\+producto}} (int id) const
+\begin{DoxyCompactList}\small\item\em Devuelve el producto con el ID (id). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCjt__Productos_a1181d2101dc29587b2422ab4e7128f00}{escribir\+\_\+producto}} (int id) const
+\begin{DoxyCompactList}\small\item\em Imprime la información del producto con el ID (id) (cantidad tiene y necesita). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCjt__Productos_ae2dde13e1c263d9fb957397b5fabe3c7}{consultar\+\_\+num}} () const
+\begin{DoxyCompactList}\small\item\em Imprime el número total de productos diferentes que hay en el \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCjt__Productos_a51edb5ee9a2acf40d20f5ebf6a3a124e}{agregar\+\_\+productos}} (int cantidad)
+\begin{DoxyCompactList}\small\item\em Agrega una cantidad (cantidad) de nuevos productos al \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ int, \mbox{\hyperlink{classProducto}{Producto}} $>$ \mbox{\hyperlink{classCjt__Productos_a6186e7cd8fe4f4122b2a9162a2758cd7}{productos}}
+\begin{DoxyCompactList}\small\item\em Mapa que guarda todos los productos diferentes que existen, con el ID del producto como clave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Conjunto de productos. 
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classCjt__Productos_a883f11c37e355d97bf355b19366ab03f}\label{classCjt__Productos_a883f11c37e355d97bf355b19366ab03f}} 
+\index{Cjt\_Productos@{Cjt\_Productos}!Cjt\_Productos@{Cjt\_Productos}}
+\index{Cjt\_Productos@{Cjt\_Productos}!Cjt\_Productos@{Cjt\_Productos}}
+\doxysubsubsection{\texorpdfstring{Cjt\_Productos()}{Cjt\_Productos()}}
+{\footnotesize\ttfamily Cjt\+\_\+\+Productos\+::\+Cjt\+\_\+\+Productos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}}. 
+
+Construye un \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}} vacío.
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se crea un conjunto de prods vacío. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCjt__Productos_a2f976b30f5f983336951978a6e8b1d0c}\label{classCjt__Productos_a2f976b30f5f983336951978a6e8b1d0c}} 
+\index{Cjt\_Productos@{Cjt\_Productos}!````~Cjt\_Productos@{$\sim$Cjt\_Productos}}
+\index{````~Cjt\_Productos@{$\sim$Cjt\_Productos}!Cjt\_Productos@{Cjt\_Productos}}
+\doxysubsubsection{\texorpdfstring{$\sim$Cjt\_Productos()}{~Cjt\_Productos()}}
+{\footnotesize\ttfamily Cjt\+\_\+\+Productos\+::$\sim$\+Cjt\+\_\+\+Productos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de la clase \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}}. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se destruye el objeto. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7                                \{}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classCjt__Productos_a51edb5ee9a2acf40d20f5ebf6a3a124e}\label{classCjt__Productos_a51edb5ee9a2acf40d20f5ebf6a3a124e}} 
+\index{Cjt\_Productos@{Cjt\_Productos}!agregar\_productos@{agregar\_productos}}
+\index{agregar\_productos@{agregar\_productos}!Cjt\_Productos@{Cjt\_Productos}}
+\doxysubsubsection{\texorpdfstring{agregar\_productos()}{agregar\_productos()}}
+{\footnotesize\ttfamily void Cjt\+\_\+\+Productos\+::agregar\+\_\+productos (\begin{DoxyParamCaption}\item[{int}]{cantidad }\end{DoxyParamCaption})}
+
+
+
+Agrega una cantidad (cantidad) de nuevos productos al \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cantidad} & La cantidad de nuevos productos que se quieren agregar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La cantidad debe ser mayor que 0. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se agregan la cantidad (cantidad) de nuevos productos al \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}}. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35                                                   \{}
+\DoxyCodeLine{36         \textcolor{keywordtype}{int} idInicial;}
+\DoxyCodeLine{37         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCjt__Productos_a6186e7cd8fe4f4122b2a9162a2758cd7}{productos}}.empty()) \{}
+\DoxyCodeLine{38             idInicial = 1;}
+\DoxyCodeLine{39         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{40             idInicial = \mbox{\hyperlink{classCjt__Productos_a6186e7cd8fe4f4122b2a9162a2758cd7}{productos}}.rbegin()-\/>first + 1;}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < cantidad; ++i) \{}
+\DoxyCodeLine{44             \textcolor{keywordtype}{int} peso, volumen;}
+\DoxyCodeLine{45             cin >> peso;}
+\DoxyCodeLine{46             cin >> volumen;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48             \mbox{\hyperlink{classProducto}{Producto}} nuevoprod;}
+\DoxyCodeLine{49             nuevoprod.\mbox{\hyperlink{classProducto_a93816d8ae0ea3ac9b6899717ccc6b223}{setPeso}}(peso);}
+\DoxyCodeLine{50             nuevoprod.\mbox{\hyperlink{classProducto_a4169d872b39b0c7767965834ca5ea812}{setVolumen}}(volumen);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52             \mbox{\hyperlink{classCjt__Productos_a6186e7cd8fe4f4122b2a9162a2758cd7}{productos}}[idInicial + i] = nuevoprod;}
+\DoxyCodeLine{53         \}  }
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCjt__Productos_ae2dde13e1c263d9fb957397b5fabe3c7}\label{classCjt__Productos_ae2dde13e1c263d9fb957397b5fabe3c7}} 
+\index{Cjt\_Productos@{Cjt\_Productos}!consultar\_num@{consultar\_num}}
+\index{consultar\_num@{consultar\_num}!Cjt\_Productos@{Cjt\_Productos}}
+\doxysubsubsection{\texorpdfstring{consultar\_num()}{consultar\_num()}}
+{\footnotesize\ttfamily void Cjt\+\_\+\+Productos\+::consultar\+\_\+num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime el número total de productos diferentes que hay en el \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}}. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Imprime la cantidad de productos diferentes que hay en el \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}}. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30                                         \{}
+\DoxyCodeLine{31         cout << \mbox{\hyperlink{classCjt__Productos_a6186e7cd8fe4f4122b2a9162a2758cd7}{productos}}.size() << endl;}
+\DoxyCodeLine{32     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCjt__Productos_a1181d2101dc29587b2422ab4e7128f00}\label{classCjt__Productos_a1181d2101dc29587b2422ab4e7128f00}} 
+\index{Cjt\_Productos@{Cjt\_Productos}!escribir\_producto@{escribir\_producto}}
+\index{escribir\_producto@{escribir\_producto}!Cjt\_Productos@{Cjt\_Productos}}
+\doxysubsubsection{\texorpdfstring{escribir\_producto()}{escribir\_producto()}}
+{\footnotesize\ttfamily void Cjt\+\_\+\+Productos\+::escribir\+\_\+producto (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Imprime la información del producto con el ID (id) (cantidad tiene y necesita). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si el producto con el ID dado existe, imprime su ID, peso y volumen. Si el producto no existe, imprime un mensaje de error. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21                                                   \{}
+\DoxyCodeLine{22      \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCjt__Productos_ad67e452c8f96a969dff77451b1469272}{producto\_existe}}(\textcolor{keywordtype}{id})) \{}
+\DoxyCodeLine{23         cout << \textcolor{keywordtype}{id} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}{get\_producto}}(\textcolor{keywordtype}{id}).\mbox{\hyperlink{classProducto_af8ceac28d046711687844a079bea3fda}{getPeso}}() << \textcolor{charliteral}{' '} << \mbox{\hyperlink{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}{get\_producto}}(\textcolor{keywordtype}{id}).\mbox{\hyperlink{classProducto_a30ee22eb6f724de30021ff4fa4af100a}{getVolumen}}() << endl;}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{26         cout << \textcolor{stringliteral}{"{}error: no existe el producto"{}} << endl;}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}\label{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}} 
+\index{Cjt\_Productos@{Cjt\_Productos}!get\_producto@{get\_producto}}
+\index{get\_producto@{get\_producto}!Cjt\_Productos@{Cjt\_Productos}}
+\doxysubsubsection{\texorpdfstring{get\_producto()}{get\_producto()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classProducto}{Producto}} Cjt\+\_\+\+Productos\+::get\+\_\+producto (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el producto con el ID (id). 
+
+Esta función devuelve el producto con el ID (id).
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El producto con el ID (id) debe existir en el \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve el producto con el ID (id). 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Devuelve}
+El product con el ID (id). 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15                                                  \{}
+\DoxyCodeLine{16    map<int, Producto>::const\_iterator it = \mbox{\hyperlink{classCjt__Productos_a6186e7cd8fe4f4122b2a9162a2758cd7}{productos}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{17         \textcolor{keywordflow}{return} it-\/>second;}
+\DoxyCodeLine{18     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCjt__Productos_ad67e452c8f96a969dff77451b1469272}\label{classCjt__Productos_ad67e452c8f96a969dff77451b1469272}} 
+\index{Cjt\_Productos@{Cjt\_Productos}!producto\_existe@{producto\_existe}}
+\index{producto\_existe@{producto\_existe}!Cjt\_Productos@{Cjt\_Productos}}
+\doxysubsubsection{\texorpdfstring{producto\_existe()}{producto\_existe()}}
+{\footnotesize\ttfamily bool Cjt\+\_\+\+Productos\+::producto\+\_\+existe (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Verifica si el producto con el ID (id) existe. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve true si el producto con el ID (id) existe, false si no. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Devuelve}
+True si el producto existe, false en caso contrario. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10                                                 \{}
+\DoxyCodeLine{11     map<int, Producto>::const\_iterator it = \mbox{\hyperlink{classCjt__Productos_a6186e7cd8fe4f4122b2a9162a2758cd7}{productos}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{12     \textcolor{keywordflow}{return} it != \mbox{\hyperlink{classCjt__Productos_a6186e7cd8fe4f4122b2a9162a2758cd7}{productos}}.end();}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classCjt__Productos_a6186e7cd8fe4f4122b2a9162a2758cd7}\label{classCjt__Productos_a6186e7cd8fe4f4122b2a9162a2758cd7}} 
+\index{Cjt\_Productos@{Cjt\_Productos}!productos@{productos}}
+\index{productos@{productos}!Cjt\_Productos@{Cjt\_Productos}}
+\doxysubsubsection{\texorpdfstring{productos}{productos}}
+{\footnotesize\ttfamily map$<$int, \mbox{\hyperlink{classProducto}{Producto}}$>$ Cjt\+\_\+\+Productos\+::productos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa que guarda todos los productos diferentes que existen, con el ID del producto como clave. 
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Cjt__Productos_8hh}{Cjt\+\_\+\+Productos.\+hh}}\item 
+\mbox{\hyperlink{Cjt__Productos_8cc}{Cjt\+\_\+\+Productos.\+cc}}\end{DoxyCompactItemize}

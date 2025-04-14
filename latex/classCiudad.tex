@@ -1,0 +1,653 @@
+\hypertarget{classCiudad}{}\doxysection{Referencia de la Clase Ciudad}
+\label{classCiudad}\index{Ciudad@{Ciudad}}
+
+
+Una ciudad con productos y sus cantidades.  
+
+
+
+
+{\ttfamily \#include $<$Ciudad.\+hh$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCiudad_a58cb38dda8085e38bb0358ff54ca0e0c}{Ciudad}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \mbox{\hyperlink{classCiudad}{Ciudad}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCiudad_a70a8b119a73d78aac166c684da9b052c}{$\sim$\+Ciudad}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase \mbox{\hyperlink{classCiudad}{Ciudad}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCiudad_a7663240d1e8c18678d5235425560f968}{get\+\_\+peso\+\_\+total}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve el peso total de los productos de la ciudad. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCiudad_a0c6a1485d49529b998ac0e824a77e84c}{get\+\_\+volumen\+\_\+total}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve el volumen total de los productos de la ciudad. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCiudad_a1e45fcd1caabffb94d6a2b9efe497307}{producto\+\_\+existe}} (int id) const
+\begin{DoxyCompactList}\small\item\em Verifica si el producto con el ID ID (id) existe en la ciudad. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCiudad_aa80973fde717b26316d0c7a06cc90e32}{escribirciudad}} () const
+\begin{DoxyCompactList}\small\item\em Imprime la ID y la cantidad que tiene y necesita de todos los productos que tiene la ciudad así como el volumen y el peso total de la ciudad. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCiudad_aac0d2ddd7255163bb239297ef407507a}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve el número de productos diferentes en la ciudad. \end{DoxyCompactList}\item 
+pair$<$ int, int $>$ \mbox{\hyperlink{classCiudad_a156fe8f69f421a93364d740cf7e71876}{get\+\_\+info\+\_\+prod}} (int id)
+\begin{DoxyCompactList}\small\item\em Devuelve la información de un producto (cantidad que tiene y necesita de este). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\+\_\+tiene}} (int id) const
+\begin{DoxyCompactList}\small\item\em Devuelve la cantidad que tiene del producto con ID (id). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCiudad_a7c025a04828f0c05b784ee8aef9348ce}{cantidad\+\_\+necesita}} (int id) const
+\begin{DoxyCompactList}\small\item\em Devuelve la cantidad que necesita del producto con ID (id). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCiudad_acd1ec9434e58b80b6044c14c132a1906}{modificartotales}} (int id, int \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\+\_\+tiene}}, int peso, int volumen)
+\begin{DoxyCompactList}\small\item\em Modifica el peso y volumen totales de la ciudad según los productos y sus cantidades. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCiudad_a376b1b7c6f0f3be4ab362daff5c876ff}{agregar\+Producto}} (int id, int \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\+\_\+tiene}}, int \mbox{\hyperlink{classCiudad_a7c025a04828f0c05b784ee8aef9348ce}{cantidad\+\_\+necesita}}, int peso, int volumen)
+\begin{DoxyCompactList}\small\item\em Agrega un producto al inventario de la ciudad, actualizando los totales. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCiudad_a87c725c74738aae3c786a3fef39be34a}{agregar\+Productoinv}} (int id, int \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\+\_\+tiene}}, int \mbox{\hyperlink{classCiudad_a7c025a04828f0c05b784ee8aef9348ce}{cantidad\+\_\+necesita}}, int peso, int volumen)
+\begin{DoxyCompactList}\small\item\em Agrega un producto al inventario de la ciudad. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCiudad_a167d2e3488ed7c2b57a03d9af93462a0}{modificar\+Producto}} (int id, int \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\+\_\+tiene}}, int \mbox{\hyperlink{classCiudad_a7c025a04828f0c05b784ee8aef9348ce}{cantidad\+\_\+necesita}}, int peso, int volumen)
+\begin{DoxyCompactList}\small\item\em Modifica un producto existente en la ciudad. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCiudad_ac9c242672d8dc00bceea3424efb9972e}{eliminar\+Producto}} (int id, int peso, int volumen)
+\begin{DoxyCompactList}\small\item\em Elimina un producto de la ciudad. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCiudad_a064d4c049f59aa71995e24da3baf16bd}{limpiarinv}} ()
+\begin{DoxyCompactList}\small\item\em Limpia el inventario de la ciudad. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCiudad_a28870017892ebab2bdd9758d63e298bc}{comerciarcon}} (\mbox{\hyperlink{classCiudad}{Ciudad}} \&ciudad2, \mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}} \&productos)
+\begin{DoxyCompactList}\small\item\em Función que ayuda a comerciar entre esta ciudad y otra ciudad. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+pair$<$ int, int $>$ \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}
+\begin{DoxyCompactList}\small\item\em Par que almacena el peso y el volumen totales de los productos de la ciudad. \end{DoxyCompactList}\item 
+map$<$ int, pair$<$ int, int $>$ $>$ \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\+\_\+neces}}
+\begin{DoxyCompactList}\small\item\em Mapa que almacena los productos con sus cantidades y las cantidades que necesita. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Una ciudad con productos y sus cantidades. 
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classCiudad_a58cb38dda8085e38bb0358ff54ca0e0c}\label{classCiudad_a58cb38dda8085e38bb0358ff54ca0e0c}} 
+\index{Ciudad@{Ciudad}!Ciudad@{Ciudad}}
+\index{Ciudad@{Ciudad}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{Ciudad()}{Ciudad()}}
+{\footnotesize\ttfamily Ciudad\+::\+Ciudad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase \mbox{\hyperlink{classCiudad}{Ciudad}}. 
+
+Inicializa el inventario de la ciudad con peso y volumen total 0. \begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+La ciudad se crea con peso y volumen total igual a 0. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5                \{}
+\DoxyCodeLine{6 \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}} = make\_pair(0, 0);}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_a70a8b119a73d78aac166c684da9b052c}\label{classCiudad_a70a8b119a73d78aac166c684da9b052c}} 
+\index{Ciudad@{Ciudad}!````~Ciudad@{$\sim$Ciudad}}
+\index{````~Ciudad@{$\sim$Ciudad}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{$\sim$Ciudad()}{~Ciudad()}}
+{\footnotesize\ttfamily Ciudad\+::$\sim$\+Ciudad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de la clase \mbox{\hyperlink{classCiudad}{Ciudad}}. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se destruye el objeto. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classCiudad_a376b1b7c6f0f3be4ab362daff5c876ff}\label{classCiudad_a376b1b7c6f0f3be4ab362daff5c876ff}} 
+\index{Ciudad@{Ciudad}!agregarProducto@{agregarProducto}}
+\index{agregarProducto@{agregarProducto}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{agregarProducto()}{agregarProducto()}}
+{\footnotesize\ttfamily bool Ciudad\+::agregar\+Producto (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{cantidad\+\_\+tiene,  }\item[{int}]{cantidad\+\_\+necesita,  }\item[{int}]{peso,  }\item[{int}]{volumen }\end{DoxyParamCaption})}
+
+
+
+Agrega un producto al inventario de la ciudad, actualizando los totales. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto. \\
+\hline
+{\em cantidad\+\_\+tiene} & La cantidad de producto que la ciudad tiene. \\
+\hline
+{\em cantidad\+\_\+necesita} & La cantidad de producto que la ciudad necesita. \\
+\hline
+{\em peso} & El peso del producto. \\
+\hline
+{\em volumen} & El volumen del producto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El producto con ID (id) no debe existir en el mapa (productos). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Agrega el producto con sus cantidades al mapa (productos), actualizando los totales. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Devuelve}
+true si el producto fue agregado, false si no. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38                                                                                                      \{}
+\DoxyCodeLine{39     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCiudad_a1e45fcd1caabffb94d6a2b9efe497307}{producto\_existe}}(\textcolor{keywordtype}{id})) \{}
+\DoxyCodeLine{40         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{41     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{42         \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}[id] = make\_pair(\mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\_tiene}}, \mbox{\hyperlink{classCiudad_a7c025a04828f0c05b784ee8aef9348ce}{cantidad\_necesita}});}
+\DoxyCodeLine{43         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.first += \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\_tiene}}*peso; }
+\DoxyCodeLine{44         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.second += \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\_tiene}}*volumen;}
+\DoxyCodeLine{45         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_a87c725c74738aae3c786a3fef39be34a}\label{classCiudad_a87c725c74738aae3c786a3fef39be34a}} 
+\index{Ciudad@{Ciudad}!agregarProductoinv@{agregarProductoinv}}
+\index{agregarProductoinv@{agregarProductoinv}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{agregarProductoinv()}{agregarProductoinv()}}
+{\footnotesize\ttfamily void Ciudad\+::agregar\+Productoinv (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{cantidad\+\_\+tiene,  }\item[{int}]{cantidad\+\_\+necesita,  }\item[{int}]{peso,  }\item[{int}]{volumen }\end{DoxyParamCaption})}
+
+
+
+Agrega un producto al inventario de la ciudad. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto. \\
+\hline
+{\em cantidad\+\_\+tiene} & La cantidad de producto que la ciudad tiene. \\
+\hline
+{\em cantidad\+\_\+necesita} & La cantidad de producto que la ciudad necesita. \\
+\hline
+{\em peso} & El peso del producto. \\
+\hline
+{\em volumen} & El volumen del producto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Agrega el producto con sus cantidades al mapa (productos), actualizando los totales. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48                                                                                                         \{}
+\DoxyCodeLine{49         \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}[id] = make\_pair(\mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\_tiene}}, \mbox{\hyperlink{classCiudad_a7c025a04828f0c05b784ee8aef9348ce}{cantidad\_necesita}});}
+\DoxyCodeLine{50         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.first += \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\_tiene}}*peso; }
+\DoxyCodeLine{51         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.second += \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\_tiene}}*volumen;}
+\DoxyCodeLine{52 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_a7c025a04828f0c05b784ee8aef9348ce}\label{classCiudad_a7c025a04828f0c05b784ee8aef9348ce}} 
+\index{Ciudad@{Ciudad}!cantidad\_necesita@{cantidad\_necesita}}
+\index{cantidad\_necesita@{cantidad\_necesita}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{cantidad\_necesita()}{cantidad\_necesita()}}
+{\footnotesize\ttfamily int Ciudad\+::cantidad\+\_\+necesita (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la cantidad que necesita del producto con ID (id). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El producto con ID (id) debe existir en el mapa (productos). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve la cantidad que necesita del producto con ID (id). 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87                                           \{}
+\DoxyCodeLine{88     map<int, pair<int, int>>::const\_iterator it = \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{89     \textcolor{keywordflow}{return} it-\/>second.second;}
+\DoxyCodeLine{90 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_abb500472586ee95f24d62f828098e380}\label{classCiudad_abb500472586ee95f24d62f828098e380}} 
+\index{Ciudad@{Ciudad}!cantidad\_tiene@{cantidad\_tiene}}
+\index{cantidad\_tiene@{cantidad\_tiene}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{cantidad\_tiene()}{cantidad\_tiene()}}
+{\footnotesize\ttfamily int Ciudad\+::cantidad\+\_\+tiene (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la cantidad que tiene del producto con ID (id). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El producto con ID (id) debe existir en el mapa (productos). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve la cantidad que tiene del producto con ID (id). 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81                                        \{}
+\DoxyCodeLine{82     map<int, pair<int, int>>::const\_iterator it = \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{83     \textcolor{keywordflow}{return} it-\/>second.first;}
+\DoxyCodeLine{84    }
+\DoxyCodeLine{85 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_a28870017892ebab2bdd9758d63e298bc}\label{classCiudad_a28870017892ebab2bdd9758d63e298bc}} 
+\index{Ciudad@{Ciudad}!comerciarcon@{comerciarcon}}
+\index{comerciarcon@{comerciarcon}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{comerciarcon()}{comerciarcon()}}
+{\footnotesize\ttfamily void Ciudad\+::comerciarcon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCiudad}{Ciudad}} \&}]{ciudad2,  }\item[{\mbox{\hyperlink{classCjt__Productos}{Cjt\+\_\+\+Productos}} \&}]{productos }\end{DoxyParamCaption})}
+
+
+
+Función que ayuda a comerciar entre esta ciudad y otra ciudad. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em ciudad2} & La ciudad con la que se va a comerciar. \\
+\hline
+{\em productos} & El conjunto de productos general.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Actualiza el inventario de las dos ciudades donde una ciudad le dará a la otra todos los productos que le sobren hasta alcanzar si es posible los que la otra necesite, y viceversa. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{97                                                                    \{}
+\DoxyCodeLine{98     map<int, pair<int, int>>::iterator it = \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.begin();}
+\DoxyCodeLine{99     map<int, pair<int, int>>::iterator it2 = ciudad2.\mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.begin();}
+\DoxyCodeLine{100     }
+\DoxyCodeLine{101     \textcolor{keywordflow}{while} (it != \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.end() and it2 != ciudad2.\mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.end()) \{}
+\DoxyCodeLine{102         \textcolor{keywordtype}{int} idproducto1 = it-\/>first;}
+\DoxyCodeLine{103         \textcolor{keywordtype}{int} idproducto2 = it2-\/>first;}
+\DoxyCodeLine{104     }
+\DoxyCodeLine{105         \textcolor{keywordflow}{if} (idproducto1 < idproducto2) \{}
+\DoxyCodeLine{106             ++it;}
+\DoxyCodeLine{107         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (idproducto1 > idproducto2) \{}
+\DoxyCodeLine{108             ++it2;}
+\DoxyCodeLine{109         \} \textcolor{keywordflow}{else} \{ }
+\DoxyCodeLine{110             \textcolor{keywordtype}{int} cant\_tiene\_ciudad1 = it-\/>second.first;}
+\DoxyCodeLine{111             \textcolor{keywordtype}{int} cant\_tiene\_ciudad2 = it2-\/>second.first;}
+\DoxyCodeLine{112             }
+\DoxyCodeLine{113             \textcolor{keywordtype}{int} sobranteciudad1 = cant\_tiene\_ciudad1 -\/ it-\/>second.second;}
+\DoxyCodeLine{114             \textcolor{keywordtype}{int} sobranteciudad2 = cant\_tiene\_ciudad2 -\/ it2-\/>second.second;}
+\DoxyCodeLine{115             \textcolor{keywordtype}{int} intercambio = 0;}
+\DoxyCodeLine{116             }
+\DoxyCodeLine{117             \textcolor{keywordflow}{if} (sobranteciudad1 > 0 and cant\_tiene\_ciudad2 < it2-\/>second.second) \{}
+\DoxyCodeLine{118                 \textcolor{keywordflow}{if} (sobranteciudad1 > it2-\/>second.second -\/ cant\_tiene\_ciudad2) intercambio = it2-\/>second.second -\/ cant\_tiene\_ciudad2;}
+\DoxyCodeLine{119                     \textcolor{keywordflow}{else} intercambio = sobranteciudad1;}
+\DoxyCodeLine{120                 \textcolor{keywordflow}{if} (intercambio > 0) \{}
+\DoxyCodeLine{121                     \mbox{\hyperlink{classCiudad_acd1ec9434e58b80b6044c14c132a1906}{modificartotales}}(idproducto1, cant\_tiene\_ciudad1 -\/ intercambio, productos.\mbox{\hyperlink{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}{get\_producto}}(idproducto1).\mbox{\hyperlink{classProducto_af8ceac28d046711687844a079bea3fda}{getPeso}}(), productos.\mbox{\hyperlink{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}{get\_producto}}(idproducto1).\mbox{\hyperlink{classProducto_a30ee22eb6f724de30021ff4fa4af100a}{getVolumen}}());}
+\DoxyCodeLine{122                     ciudad2.\mbox{\hyperlink{classCiudad_acd1ec9434e58b80b6044c14c132a1906}{modificartotales}}(idproducto1, cant\_tiene\_ciudad2 + intercambio, productos.\mbox{\hyperlink{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}{get\_producto}}(idproducto1).\mbox{\hyperlink{classProducto_af8ceac28d046711687844a079bea3fda}{getPeso}}(), productos.\mbox{\hyperlink{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}{get\_producto}}(idproducto1).\mbox{\hyperlink{classProducto_a30ee22eb6f724de30021ff4fa4af100a}{getVolumen}}());}
+\DoxyCodeLine{123                     it-\/>second.first -\/= intercambio;}
+\DoxyCodeLine{124                     it2-\/>second.first += intercambio;}
+\DoxyCodeLine{125                 \}}
+\DoxyCodeLine{126             \}}
+\DoxyCodeLine{127             }
+\DoxyCodeLine{128             \textcolor{keywordflow}{if} (sobranteciudad2 > 0 and cant\_tiene\_ciudad1 < it-\/>second.second) \{}
+\DoxyCodeLine{129                  \textcolor{keywordflow}{if} (sobranteciudad2 > it-\/>second.second -\/ cant\_tiene\_ciudad1) intercambio = it-\/>second.second -\/ cant\_tiene\_ciudad1;}
+\DoxyCodeLine{130                     \textcolor{keywordflow}{else} intercambio = sobranteciudad2;}
+\DoxyCodeLine{131                 \textcolor{keywordflow}{if} (intercambio > 0) \{}
+\DoxyCodeLine{132                     ciudad2.\mbox{\hyperlink{classCiudad_acd1ec9434e58b80b6044c14c132a1906}{modificartotales}}(idproducto1, cant\_tiene\_ciudad2 -\/ intercambio, productos.\mbox{\hyperlink{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}{get\_producto}}(idproducto1).\mbox{\hyperlink{classProducto_af8ceac28d046711687844a079bea3fda}{getPeso}}(), productos.\mbox{\hyperlink{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}{get\_producto}}(idproducto1).\mbox{\hyperlink{classProducto_a30ee22eb6f724de30021ff4fa4af100a}{getVolumen}}());}
+\DoxyCodeLine{133                     \mbox{\hyperlink{classCiudad_acd1ec9434e58b80b6044c14c132a1906}{modificartotales}}(idproducto1, cant\_tiene\_ciudad1 + intercambio, productos.\mbox{\hyperlink{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}{get\_producto}}(idproducto1).\mbox{\hyperlink{classProducto_af8ceac28d046711687844a079bea3fda}{getPeso}}(), productos.\mbox{\hyperlink{classCjt__Productos_ae2f155349b1f134bc966dd39b2e7320d}{get\_producto}}(idproducto1).\mbox{\hyperlink{classProducto_a30ee22eb6f724de30021ff4fa4af100a}{getVolumen}}());}
+\DoxyCodeLine{134                     it-\/>second.first += intercambio;}
+\DoxyCodeLine{135                     it2-\/>second.first -\/= intercambio;}
+\DoxyCodeLine{136                 \}}
+\DoxyCodeLine{137             \}}
+\DoxyCodeLine{138             ++it;   }
+\DoxyCodeLine{139             ++it2;}
+\DoxyCodeLine{140         \}}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_ac9c242672d8dc00bceea3424efb9972e}\label{classCiudad_ac9c242672d8dc00bceea3424efb9972e}} 
+\index{Ciudad@{Ciudad}!eliminarProducto@{eliminarProducto}}
+\index{eliminarProducto@{eliminarProducto}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{eliminarProducto()}{eliminarProducto()}}
+{\footnotesize\ttfamily bool Ciudad\+::eliminar\+Producto (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{peso,  }\item[{int}]{volumen }\end{DoxyParamCaption})}
+
+
+
+Elimina un producto de la ciudad. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto. \\
+\hline
+{\em peso} & El peso del producto. \\
+\hline
+{\em volumen} & El volumen del producto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El producto con ID (id) debe existir en el mapa (productos). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Elimina el producto con ID (id) del mapa (productos), actualizando los totales. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66                                                            \{}
+\DoxyCodeLine{67     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCiudad_a1e45fcd1caabffb94d6a2b9efe497307}{producto\_existe}}(\textcolor{keywordtype}{id})) \{}
+\DoxyCodeLine{68         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.first -\/= \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}[id].first*peso;}
+\DoxyCodeLine{69         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.second -\/= \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}[id].first*volumen;}
+\DoxyCodeLine{70         \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.erase(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{71         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{72     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{73         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75  }
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_aa80973fde717b26316d0c7a06cc90e32}\label{classCiudad_aa80973fde717b26316d0c7a06cc90e32}} 
+\index{Ciudad@{Ciudad}!escribirciudad@{escribirciudad}}
+\index{escribirciudad@{escribirciudad}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{escribirciudad()}{escribirciudad()}}
+{\footnotesize\ttfamily void Ciudad\+::escribirciudad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime la ID y la cantidad que tiene y necesita de todos los productos que tiene la ciudad así como el volumen y el peso total de la ciudad. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Imprime la ID y la cantidad que tiene y necesita de todos los productos que tiene la ciudad, así como los totales de esta. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28                                   \{}
+\DoxyCodeLine{29     \textcolor{keywordflow}{for} (map<\textcolor{keywordtype}{int}, pair<int, int>>::const\_iterator it = \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.begin(); it != \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.end(); ++it) \{}
+\DoxyCodeLine{30             cout << it-\/>first << \textcolor{stringliteral}{"{} "{}} << it-\/>second.first << \textcolor{stringliteral}{"{} "{}} << it-\/>second.second << endl;}
+\DoxyCodeLine{31         \}}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_a156fe8f69f421a93364d740cf7e71876}\label{classCiudad_a156fe8f69f421a93364d740cf7e71876}} 
+\index{Ciudad@{Ciudad}!get\_info\_prod@{get\_info\_prod}}
+\index{get\_info\_prod@{get\_info\_prod}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{get\_info\_prod()}{get\_info\_prod()}}
+{\footnotesize\ttfamily pair$<$ int, int $>$ Ciudad\+::get\+\_\+info\+\_\+prod (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Devuelve la información de un producto (cantidad que tiene y necesita de este). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El producto con ID (id) debe existir en el mapa (productos). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve la información del producto con (id) (cantidad que tiene y necesita de este). 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Devuelve}
+Un par con la cantidad que tiene y la cantidad que necesita del producto. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{77                                             \{}
+\DoxyCodeLine{78     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}[id];  }
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_a7663240d1e8c18678d5235425560f968}\label{classCiudad_a7663240d1e8c18678d5235425560f968}} 
+\index{Ciudad@{Ciudad}!get\_peso\_total@{get\_peso\_total}}
+\index{get\_peso\_total@{get\_peso\_total}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{get\_peso\_total()}{get\_peso\_total()}}
+{\footnotesize\ttfamily int Ciudad\+::get\+\_\+peso\+\_\+total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el peso total de los productos de la ciudad. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve el peso total de los productos de la ciudad. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10                                  \{}
+\DoxyCodeLine{11 \textcolor{keywordflow}{return} \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.first;}
+\DoxyCodeLine{12 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_a0c6a1485d49529b998ac0e824a77e84c}\label{classCiudad_a0c6a1485d49529b998ac0e824a77e84c}} 
+\index{Ciudad@{Ciudad}!get\_volumen\_total@{get\_volumen\_total}}
+\index{get\_volumen\_total@{get\_volumen\_total}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{get\_volumen\_total()}{get\_volumen\_total()}}
+{\footnotesize\ttfamily int Ciudad\+::get\+\_\+volumen\+\_\+total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el volumen total de los productos de la ciudad. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve el volumen total de los productos de la ciudad. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13                                     \{}
+\DoxyCodeLine{14 \textcolor{keywordflow}{return} \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.second;}
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_aac0d2ddd7255163bb239297ef407507a}\label{classCiudad_aac0d2ddd7255163bb239297ef407507a}} 
+\index{Ciudad@{Ciudad}!getSize@{getSize}}
+\index{getSize@{getSize}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily int Ciudad\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el número de productos diferentes en la ciudad. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve el número de productos diferentes que hay en la ciudad. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34                           \{}
+\DoxyCodeLine{35     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.size();}
+\DoxyCodeLine{36 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_a064d4c049f59aa71995e24da3baf16bd}\label{classCiudad_a064d4c049f59aa71995e24da3baf16bd}} 
+\index{Ciudad@{Ciudad}!limpiarinv@{limpiarinv}}
+\index{limpiarinv@{limpiarinv}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{limpiarinv()}{limpiarinv()}}
+{\footnotesize\ttfamily void Ciudad\+::limpiarinv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Limpia el inventario de la ciudad. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Elimina todos los productos del mapa (productos) y reinicia los totales. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92                         \{}
+\DoxyCodeLine{93     \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.clear();}
+\DoxyCodeLine{94     \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}} = make\_pair(0, 0);}
+\DoxyCodeLine{95 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_a167d2e3488ed7c2b57a03d9af93462a0}\label{classCiudad_a167d2e3488ed7c2b57a03d9af93462a0}} 
+\index{Ciudad@{Ciudad}!modificarProducto@{modificarProducto}}
+\index{modificarProducto@{modificarProducto}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{modificarProducto()}{modificarProducto()}}
+{\footnotesize\ttfamily bool Ciudad\+::modificar\+Producto (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{cantidad\+\_\+tiene,  }\item[{int}]{cantidad\+\_\+necesita,  }\item[{int}]{peso,  }\item[{int}]{volumen }\end{DoxyParamCaption})}
+
+
+
+Modifica un producto existente en la ciudad. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto. \\
+\hline
+{\em cantidad\+\_\+tiene} & La cantidad de producto que la ciudad tiene. \\
+\hline
+{\em cantidad\+\_\+necesita} & La cantidad de producto que la ciudad necesita. \\
+\hline
+{\em peso} & El peso del producto. \\
+\hline
+{\em volumen} & El volumen del producto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El producto con ID (id) debe existir en el mapa (productos). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Modifica las cantidades del producto en el mapa (productos), actualizando los totales. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54                                                                                                        \{}
+\DoxyCodeLine{55     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCiudad_a1e45fcd1caabffb94d6a2b9efe497307}{producto\_existe}}(\textcolor{keywordtype}{id})) \{}
+\DoxyCodeLine{56         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.first -\/= \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}[id].first*peso;}
+\DoxyCodeLine{57         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.second -\/= \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}[id].first*volumen;  }
+\DoxyCodeLine{58         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.first += \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\_tiene}}*peso; }
+\DoxyCodeLine{59         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.second += \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\_tiene}}*volumen;}
+\DoxyCodeLine{60         \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}[id] = make\_pair(\mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\_tiene}}, \mbox{\hyperlink{classCiudad_a7c025a04828f0c05b784ee8aef9348ce}{cantidad\_necesita}});}
+\DoxyCodeLine{61         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{62     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{63         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{64     \}}
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_acd1ec9434e58b80b6044c14c132a1906}\label{classCiudad_acd1ec9434e58b80b6044c14c132a1906}} 
+\index{Ciudad@{Ciudad}!modificartotales@{modificartotales}}
+\index{modificartotales@{modificartotales}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{modificartotales()}{modificartotales()}}
+{\footnotesize\ttfamily void Ciudad\+::modificartotales (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{cantidad\+\_\+tiene,  }\item[{int}]{peso,  }\item[{int}]{volumen }\end{DoxyParamCaption})}
+
+
+
+Modifica el peso y volumen totales de la ciudad según los productos y sus cantidades. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto que se modificó \\
+\hline
+{\em cantidad\+\_\+tiene} & La cantidad de producto que la ciudad tiene ahora. \\
+\hline
+{\em peso} & El peso del producto. \\
+\hline
+{\em volumen} & El volumen del producto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El producto con ID (id) debe existir en el mapa (productos) del conj de productos. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Modifica el peso y volumen totales de la ciudad según el producto y su nueva cantidad disponible en la ciudad. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                                                                                \{}
+\DoxyCodeLine{18         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.first -\/= \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}[id].first*peso;}
+\DoxyCodeLine{19         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.second -\/= \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}[id].first*volumen;  }
+\DoxyCodeLine{20         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.first += \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\_tiene}}*peso; }
+\DoxyCodeLine{21         \mbox{\hyperlink{classCiudad_af560863fd54a1bd9c281e1565c4f9953}{totales}}.second += \mbox{\hyperlink{classCiudad_abb500472586ee95f24d62f828098e380}{cantidad\_tiene}}*volumen;}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCiudad_a1e45fcd1caabffb94d6a2b9efe497307}\label{classCiudad_a1e45fcd1caabffb94d6a2b9efe497307}} 
+\index{Ciudad@{Ciudad}!producto\_existe@{producto\_existe}}
+\index{producto\_existe@{producto\_existe}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{producto\_existe()}{producto\_existe()}}
+{\footnotesize\ttfamily bool Ciudad\+::producto\+\_\+existe (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Verifica si el producto con el ID ID (id) existe en la ciudad. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El ID del producto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve true si el producto con el ID (id) dado existe en la ciudad, false si no. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23                                          \{}
+\DoxyCodeLine{24         map<int, pair<int, int>>::const\_iterator  it = \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{25         \textcolor{keywordflow}{return} it != \mbox{\hyperlink{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}{tiene\_neces}}.end();}
+\DoxyCodeLine{26     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}\label{classCiudad_ac63aa6e91f5ac6a8df02c03f1eccd74c}} 
+\index{Ciudad@{Ciudad}!tiene\_neces@{tiene\_neces}}
+\index{tiene\_neces@{tiene\_neces}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{tiene\_neces}{tiene\_neces}}
+{\footnotesize\ttfamily map$<$int, pair$<$int, int$>$ $>$ Ciudad\+::tiene\+\_\+neces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa que almacena los productos con sus cantidades y las cantidades que necesita. 
+
+\mbox{\Hypertarget{classCiudad_af560863fd54a1bd9c281e1565c4f9953}\label{classCiudad_af560863fd54a1bd9c281e1565c4f9953}} 
+\index{Ciudad@{Ciudad}!totales@{totales}}
+\index{totales@{totales}!Ciudad@{Ciudad}}
+\doxysubsubsection{\texorpdfstring{totales}{totales}}
+{\footnotesize\ttfamily pair$<$int, int$>$ Ciudad\+::totales\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Par que almacena el peso y el volumen totales de los productos de la ciudad. 
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Ciudad_8hh}{Ciudad.\+hh}}\item 
+\mbox{\hyperlink{Ciudad_8cc}{Ciudad.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,226 @@
+\hypertarget{classProducto}{}\doxysection{Referencia de la Clase Producto}
+\label{classProducto}\index{Producto@{Producto}}
+
+
+Un producto, con peso y volumen.  
+
+
+
+
+{\ttfamily \#include $<$Producto.\+hh$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classProducto_abdf37557185a4660251488b2db47fc7d}{Producto}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \mbox{\hyperlink{classProducto}{Producto}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classProducto_a9ddf639b8d0e4b6de42f8ddb7bb0fe73}{$\sim$\+Producto}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase \mbox{\hyperlink{classProducto}{Producto}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classProducto_af8ceac28d046711687844a079bea3fda}{get\+Peso}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve el peso del producto. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classProducto_a30ee22eb6f724de30021ff4fa4af100a}{get\+Volumen}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve el volumen del producto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProducto_a93816d8ae0ea3ac9b6899717ccc6b223}{set\+Peso}} (int \mbox{\hyperlink{classProducto_a5432f079d648035abccdf978b5ab6c74}{peso}})
+\begin{DoxyCompactList}\small\item\em Establece el peso del producto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProducto_a4169d872b39b0c7767965834ca5ea812}{set\+Volumen}} (int \mbox{\hyperlink{classProducto_a6d13a8d1a5dbe354f421e14e88a08273}{volumen}})
+\begin{DoxyCompactList}\small\item\em Establece el volumen del producto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classProducto_a5432f079d648035abccdf978b5ab6c74}{peso}}
+\begin{DoxyCompactList}\small\item\em Peso del producto. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classProducto_a6d13a8d1a5dbe354f421e14e88a08273}{volumen}}
+\begin{DoxyCompactList}\small\item\em Volumen del producto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Un producto, con peso y volumen. 
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classProducto_abdf37557185a4660251488b2db47fc7d}\label{classProducto_abdf37557185a4660251488b2db47fc7d}} 
+\index{Producto@{Producto}!Producto@{Producto}}
+\index{Producto@{Producto}!Producto@{Producto}}
+\doxysubsubsection{\texorpdfstring{Producto()}{Producto()}}
+{\footnotesize\ttfamily Producto\+::\+Producto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase \mbox{\hyperlink{classProducto}{Producto}}. 
+
+Construye un producto con peso y volumen igual a 0.
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El producto se construye con peso y volumen igual a 0. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6                    \{}
+\DoxyCodeLine{7     \mbox{\hyperlink{classProducto_a5432f079d648035abccdf978b5ab6c74}{peso}} = 0;}
+\DoxyCodeLine{8     \mbox{\hyperlink{classProducto_a6d13a8d1a5dbe354f421e14e88a08273}{volumen}} = 0;}
+\DoxyCodeLine{9 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProducto_a9ddf639b8d0e4b6de42f8ddb7bb0fe73}\label{classProducto_a9ddf639b8d0e4b6de42f8ddb7bb0fe73}} 
+\index{Producto@{Producto}!````~Producto@{$\sim$Producto}}
+\index{````~Producto@{$\sim$Producto}!Producto@{Producto}}
+\doxysubsubsection{\texorpdfstring{$\sim$Producto()}{~Producto()}}
+{\footnotesize\ttfamily Producto\+::$\sim$\+Producto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de la clase \mbox{\hyperlink{classProducto}{Producto}}. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se destruye el objeto. 
+\end{DoxyPostcond}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classProducto_af8ceac28d046711687844a079bea3fda}\label{classProducto_af8ceac28d046711687844a079bea3fda}} 
+\index{Producto@{Producto}!getPeso@{getPeso}}
+\index{getPeso@{getPeso}!Producto@{Producto}}
+\doxysubsubsection{\texorpdfstring{getPeso()}{getPeso()}}
+{\footnotesize\ttfamily int Producto\+::get\+Peso (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el peso del producto. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve el peso del producto. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Devuelve}
+El peso del producto. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10                             \{}
+\DoxyCodeLine{11   \textcolor{keywordflow}{return} \mbox{\hyperlink{classProducto_a5432f079d648035abccdf978b5ab6c74}{peso}};}
+\DoxyCodeLine{12 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProducto_a30ee22eb6f724de30021ff4fa4af100a}\label{classProducto_a30ee22eb6f724de30021ff4fa4af100a}} 
+\index{Producto@{Producto}!getVolumen@{getVolumen}}
+\index{getVolumen@{getVolumen}!Producto@{Producto}}
+\doxysubsubsection{\texorpdfstring{getVolumen()}{getVolumen()}}
+{\footnotesize\ttfamily int Producto\+::get\+Volumen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el volumen del producto. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve el volumen del producto. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Devuelve}
+El volumen del producto. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18                                \{}
+\DoxyCodeLine{19   \textcolor{keywordflow}{return} \mbox{\hyperlink{classProducto_a6d13a8d1a5dbe354f421e14e88a08273}{volumen}};}
+\DoxyCodeLine{20 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProducto_a93816d8ae0ea3ac9b6899717ccc6b223}\label{classProducto_a93816d8ae0ea3ac9b6899717ccc6b223}} 
+\index{Producto@{Producto}!setPeso@{setPeso}}
+\index{setPeso@{setPeso}!Producto@{Producto}}
+\doxysubsubsection{\texorpdfstring{setPeso()}{setPeso()}}
+{\footnotesize\ttfamily void Producto\+::set\+Peso (\begin{DoxyParamCaption}\item[{int}]{peso }\end{DoxyParamCaption})}
+
+
+
+Establece el peso del producto. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Asigna el valor de (peso) al atributo peso del producto. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parámetros}
+{\em peso} & El nuevo peso del producto. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14                                \{}
+\DoxyCodeLine{15     this-\/>\mbox{\hyperlink{classProducto_a5432f079d648035abccdf978b5ab6c74}{peso}} = \mbox{\hyperlink{classProducto_a5432f079d648035abccdf978b5ab6c74}{peso}};}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProducto_a4169d872b39b0c7767965834ca5ea812}\label{classProducto_a4169d872b39b0c7767965834ca5ea812}} 
+\index{Producto@{Producto}!setVolumen@{setVolumen}}
+\index{setVolumen@{setVolumen}!Producto@{Producto}}
+\doxysubsubsection{\texorpdfstring{setVolumen()}{setVolumen()}}
+{\footnotesize\ttfamily void Producto\+::set\+Volumen (\begin{DoxyParamCaption}\item[{int}]{volumen }\end{DoxyParamCaption})}
+
+
+
+Establece el volumen del producto. 
+
+\begin{DoxyPrecond}{Precondición}
+Cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Asigna el valor de (volumen) al atributo volumen del producto. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parámetros}
+{\em volumen} & El nuevo volumen del producto. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22                                      \{}
+\DoxyCodeLine{23     this-\/>\mbox{\hyperlink{classProducto_a6d13a8d1a5dbe354f421e14e88a08273}{volumen}} = \mbox{\hyperlink{classProducto_a6d13a8d1a5dbe354f421e14e88a08273}{volumen}};}
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classProducto_a5432f079d648035abccdf978b5ab6c74}\label{classProducto_a5432f079d648035abccdf978b5ab6c74}} 
+\index{Producto@{Producto}!peso@{peso}}
+\index{peso@{peso}!Producto@{Producto}}
+\doxysubsubsection{\texorpdfstring{peso}{peso}}
+{\footnotesize\ttfamily int Producto\+::peso\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Peso del producto. 
+
+\mbox{\Hypertarget{classProducto_a6d13a8d1a5dbe354f421e14e88a08273}\label{classProducto_a6d13a8d1a5dbe354f421e14e88a08273}} 
+\index{Producto@{Producto}!volumen@{volumen}}
+\index{volumen@{volumen}!Producto@{Producto}}
+\doxysubsubsection{\texorpdfstring{volumen}{volumen}}
+{\footnotesize\ttfamily int Producto\+::volumen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Volumen del producto. 
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Producto_8hh}{Producto.\+hh}}\item 
+\mbox{\hyperlink{Producto_8cc}{Producto.\+cc}}\end{DoxyCompactItemize}
