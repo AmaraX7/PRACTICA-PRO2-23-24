@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Práctica PRO2 Comercio fluvial Primavera 2024: Fichero Fuente Barco.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Práctica PRO2 Comercio fluvial Primavera 2024
+   &#160;<span id="projectnumber">Mohamed Amara El Houiti</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Barco.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Barco_8hh.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BARCO_HH</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BARCO_HH</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Cjt__Productos_8hh.html">Cjt_Productos.hh</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef NO_DIAGRAM</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classBarco.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBarco.html">Barco</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classBarco.html#a3463631b4ebd3248975f051247f7201d">   17</a></span>&#160;    pair&lt;int, int&gt; <a class="code" href="classBarco.html#a3463631b4ebd3248975f051247f7201d">vender</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classBarco.html#a2dd4ef30e47e90a4a48c493854137589">   18</a></span>&#160;    pair&lt;int, int&gt; <a class="code" href="classBarco.html#a2dd4ef30e47e90a4a48c493854137589">comprar</a>; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classBarco.html#afdf042dd4585fa01f310db4b33e522c2">   19</a></span>&#160;    vector&lt;string&gt; <a class="code" href="classBarco.html#afdf042dd4585fa01f310db4b33e522c2">visitadas</a>; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classBarco.html">Barco</a>(<span class="keywordtype">int</span> idComprar, <span class="keywordtype">int</span> cantidadComprar, <span class="keywordtype">int</span> idVender, <span class="keywordtype">int</span> cantidadVender);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    ~<a class="code" href="classBarco.html">Barco</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Consultoras</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> get_id_vender() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">int</span> get_cantidad_vender() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">int</span> get_id_comprar() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> get_cantidad_comprar() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> escribir_barco() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Modificadoras</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"></span>    <span class="keywordtype">bool</span> modificar_barco(<span class="keywordtype">int</span> idComprar, <span class="keywordtype">int</span> cantidadComprar, <span class="keywordtype">int</span> idVender, <span class="keywordtype">int</span> cantidadVender, <a class="code" href="classCjt__Productos.html">Cjt_Productos</a>&amp; productos);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> reiniciar_barco();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> ciudad_visitada(<span class="keywordtype">string</span> ciudad);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;};</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aCjt__Productos_8hh_html"><div class="ttname"><a href="Cjt__Productos_8hh.html">Cjt_Productos.hh</a></div></div>
+<div class="ttc" id="aclassBarco_html"><div class="ttname"><a href="classBarco.html">Barco</a></div><div class="ttdoc">Un barco que quiere comprar y vender productos.</div><div class="ttdef"><b>Definition:</b> Barco.hh:15</div></div>
+<div class="ttc" id="aclassBarco_html_a2dd4ef30e47e90a4a48c493854137589"><div class="ttname"><a href="classBarco.html#a2dd4ef30e47e90a4a48c493854137589">Barco::comprar</a></div><div class="ttdeci">pair&lt; int, int &gt; comprar</div><div class="ttdoc">Par con el ID y la cantidad que el producto quiere comprar.</div><div class="ttdef"><b>Definition:</b> Barco.hh:18</div></div>
+<div class="ttc" id="aclassBarco_html_a3463631b4ebd3248975f051247f7201d"><div class="ttname"><a href="classBarco.html#a3463631b4ebd3248975f051247f7201d">Barco::vender</a></div><div class="ttdeci">pair&lt; int, int &gt; vender</div><div class="ttdoc">Par con el ID y la cantidad que el producto quiere vender.</div><div class="ttdef"><b>Definition:</b> Barco.hh:17</div></div>
+<div class="ttc" id="aclassBarco_html_afdf042dd4585fa01f310db4b33e522c2"><div class="ttname"><a href="classBarco.html#afdf042dd4585fa01f310db4b33e522c2">Barco::visitadas</a></div><div class="ttdeci">vector&lt; string &gt; visitadas</div><div class="ttdoc">Vector que guarda la última ciudad visitada de cada viaje.</div><div class="ttdef"><b>Definition:</b> Barco.hh:19</div></div>
+<div class="ttc" id="aclassCjt__Productos_html"><div class="ttname"><a href="classCjt__Productos.html">Cjt_Productos</a></div><div class="ttdoc">Conjunto de productos.</div><div class="ttdef"><b>Definition:</b> Cjt_Productos.hh:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
