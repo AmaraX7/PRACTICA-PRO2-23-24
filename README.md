@@ -1,6 +1,6 @@
 # Comercio Fluvial - Práctica PRO2 23-24
 
-Este repositorio contiene la implementación de un sistema de simulación de comercio fluvial entre ciudades situadas en una cuenca hidrográfica, desarrollado como parte de la asignatura **Programación 2 (PRO2)** de la **UPC**.
+Este repositorio contiene la implementación de un sistema de simulación de comercio fluvial entre ciudades situadas en una cuenca hidrográfica, desarrollado como parte de la asignatura **Programación 2 (PRO2)** de la **UPC**, con una nota de: 10/10.
 
 ---
 
