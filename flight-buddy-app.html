@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Buddy - Emergency Communication</title>
+    <style>
+        :root {
+            --primary: #2B5876;
+            --secondary: #4E88AD;
+            --light: #f5f5f5;
+            --dark: #222;
+            --success: #4CAF50;
+            --warning: #FFC107;
+            --danger: #F44336;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            max-width: 100vw;
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .battery {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        
+        .battery-icon {
+            width: 24px;
+            height: 12px;
+            border: 1px solid #fff;
+            border-radius: 2px;
+            position: relative;
+            margin-right: 5px;
+        }
+        
+        .battery-level {
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 1px;
+        }
+        
+        .battery-cap {
+            width: 2px;
+            height: 6px;
+            background-color: #fff;
+            position: absolute;
+            right: -3px;
+            top: 3px;
+        }
+        
+        main {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab {
+            padding: 0.5rem 1rem;
+            background-color: #eee;
+            border: none;
+            border-radius: 4px 4px 0 0;
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+        
+        .tab.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            flex: 1;
+            flex-direction: column;
+        }
+        
+        .tab-content.active {
+            display: flex;
+        }
+        
+        .flight-info, .emergency-message {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .emergency-message {
+            border-left: 4px solid var(--danger);
+        }
+        
+        .message {
+            margin-bottom: 0.5rem;
+            padding: 0.75rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .message.sent {
+            background-color: #E3F2FD;
+            margin-left: 1rem;
+        }
+        
+        .message.received {
+            background-color: white;
+            margin-right: 1rem;
+        }
+        
+        .message .sender {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+        
+        .message .time {
+            font-size: 0.7rem;
+            color: #777;
+            text-align: right;
+        }
+        
+        .points {
+            font-weight: bold;
+            color: var(--success);
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button:hover {
+            background-color: var(--secondary);
+        }
+        
+        .emergency-btn {
+            background-color: var(--danger);
+            margin-top: 1rem;
+        }
+        
+        .emergency-btn:hover {
+            background-color: #d32f2f;
+        }
+        
+        .nearby-users {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .user-badge {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--success);
+            margin-right: 0.5rem;
+        }
+
+        .chat-container {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+        }
+        
+        .message-form {
+            display: flex;
+            margin-top: auto;
+        }
+        
+        .message-form input {
+            flex: 1;
+            margin-right: 0.5rem;
+        }
+        
+        .message-form button {
+            width: auto;
+        }
+        
+        .achievement {
+            display: flex;
+            align-items: center;
+            background-color: #FFF9C4;
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid var(--warning);
+        }
+        
+        .achievement-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--warning);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.75rem;
+            color: white;
+            font-weight: bold;
+        }
+        
+        footer {
+            padding: 1rem;
+            background-color: #f1f1f1;
+            text-align: center;
+            font-size: 0.8rem;
+            border-top: 1px solid #ddd;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-around;
+            padding: 0.75rem 0;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+        }
+        
+        .nav-button {
+            background: none;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #777;
+            font-size: 0.7rem;
+            width: 20%;
+        }
+        
+        .nav-button.active {
+            color: var(--primary);
+        }
+        
+        .nav-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .offline-indicator {
+            background-color: var(--danger);
+            color: white;
+            text-align: center;
+            padding: 0.25rem;
+            font-size: 0.8rem;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+            max-width: 80%;
+            text-align: center;
+            animation: fadeInOut 5s forwards;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        
+        #setup-screen, #main-screen {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #main-screen {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Setup Screen -->
+    <div id="setup-screen">
+        <header>
+            <h1>Flight Buddy</h1>
+            <p>Emergency Communication During Blackouts</p>
+        </header>
+        
+        <main>
+            <div class="flight-info">
+                <h2>Enter Your Flight Information</h2>
+                <p>This information will be shared with nearby travelers during outages</p>
+                
+                <form id="setup-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="flight">Flight Number</label>
+                        <input type="text" id="flight" placeholder="e.g. AB123" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="departure">Scheduled Departure</label>
+                        <input type="time" id="departure" required>
+                    </div>
+                    
+                    <button type="submit">Start Emergency Network</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Main Screen -->
+    <div id="main-screen">
+        <header>
+            <h1>Flight Buddy</h1>
+            <div class="offline-indicator">OFFLINE MODE - LOCAL NETWORK ACTIVE</div>
+            <div class="battery">
+                <div class="battery-icon">
+                    <div class="battery-level" id="battery-level"></div>
+                    <div class="battery-cap"></div>
+                </div>
+                <span id="battery-percent">85%</span> - Low Power Mode
+            </div>
+        </header>
+        
+        <main>
+            <div class="tabs">
+                <button class="tab active" data-tab="status">Status</button>
+                <button class="tab" data-tab="messages">Messages</button>
+                <button class="tab" data-tab="network">Network</button>
+                <button class="tab" data-tab="achievements">Achievements</button>
+            </div>
+            
+            <!-- Status Tab -->
+            <div class="tab-content active" id="status-tab">
+                <div class="flight-info">
+                    <h3>Flight Information</h3>
+                    <p><strong>Flight:</strong> <span id="status-flight"></span></p>
+                    <p><strong>Destination:</strong> <span id="status-destination"></span></p>
+                    <p><strong>Scheduled Departure:</strong> <span id="status-departure"></span></p>
+                    <p><strong>Status:</strong> <span class="warning">Delayed - Power Outage</span></p>
+                </div>
+                
+                <div class="emergency-message">
+                    <h3>Emergency Update</h3>
+                    <p>Airport management is working to restore power. Estimated time: 45 minutes.</p>
+                    <p>Please remain in the terminal area. Emergency lighting is active.</p>
+                </div>
+                
+                <div class="flight-info">
+                    <h3>Nearby Network</h3>
+                    <p><strong>Connected Users:</strong> <span id="connected-count">5</span></p>
+                    <p><strong>Community Points:</strong> <span class="points">125</span></p>
+                    <p><strong>Your Contribution:</strong> <span class="points">35</span></p>
+                </div>
+                
+                <button class="emergency-btn" id="report-btn">Report New Information</button>
+            </div>
+            
+            <!-- Messages Tab -->
+            <div class="tab-content" id="messages-tab">
+                <div class="chat-container" id="messages-container">
+                    <!-- Messages will be populated here -->
+                </div>
+                
+                <form class="message-form" id="message-form">
+                    <input type="text" placeholder="Type a message..." id="message-input" required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            
+            <!-- Network Tab -->
+            <div class="tab-content" id="network-tab">
+                <h3>Nearby Travelers</h3>
+                <div class="nearby-users" id="nearby-users">
+                    <!-- Users will be populated here -->
+                </div>
+                
+                <div class="flight-info">
+                    <h3>Network Status</h3>
+                    <p><strong>Mode:</strong> Ad-hoc Bluetooth Mesh</p>
+                    <p><strong>Signal Strength:</strong> Good</p>
+                    <p><strong>Battery Impact:</strong> Minimal (2%/hour)</p>
+                </div>
+                
+                <button id="refresh-network">Refresh Network</button>
+            </div>
+            
+            <!-- Achievements Tab -->
+            <div class="tab-content" id="achievements-tab">
+                <h3>Your Achievements</h3>
+                <div class="achievement">
+                    <div class="achievement-icon">🌟</div>
+                    <div>
+                        <strong>Network Pioneer</strong>
+                        <p>First to join the emergency network</p>
+                    </div>
+                </div>
+                
+                <div class="achievement">
+                    <div class="achievement-icon">📢</div>
+                    <div>
+                        <strong>Information Hero</strong>
+                        <p>Shared 5 critical updates</p>
+                    </div>
+                </div>
+                
+                <div class="achievement">
+                    <div class="achievement-icon">🤝</div>
+                    <div>
+                        <strong>Community Builder</strong>
+                        <p>Connected with 3 fellow travelers</p>
+                    </div>
+                </div>
+                
+                <div class="flight-info">
+                    <h3>Blackout Survival Level</h3>
+                    <p><strong>Your Level:</strong> 3 - Problem Solver</p>
+                    <p><strong>Next Achievement:</strong> Reach 50 contribution points</p>
+                    <p><strong>Progress:</strong> 35/50</p>
+                </div>
+            </div>
+        </main>
+        
+        <div class="navigation">
+            <button class="nav-button active" data-tab="status">
+                <div class="nav-icon">📊</div>
+                Status
+            </button>
+            <button class="nav-button" data-tab="messages">
+                <div class="nav-icon">💬</div>
+                Chat
+            </button>
+            <button class="nav-button" data-tab="network">
+                <div class="nav-icon">📡</div>
+                Network
+            </button>
+            <button class="nav-button" data-tab="achievements">
+                <div class="nav-icon">🏆</div>
+                Awards
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for demonstration
+        const sampleUsers = [
+            { id: 1, name: "Carlos R.", flight: "AA789", status: "online" },
+            { id: 2, name: "Emma L.", flight: "AA789", status: "online" },
+            { id: 3, name: "Jamal K.", flight: "DL456", status: "online" },
+            { id: 4, name: "Sofia M.", flight: "AA789", status: "online" },
+            { id: 5, name: "Chen W.", flight: "DL456", status: "offline" }
+        ];
+        
+        const sampleMessages = [
+            { sender: "Carlos R.", message: "Any updates on power restoration?", time: "13:45", type: "received" },
+            { sender: "Airport Staff", message: "Working on generators. Stay in terminals. Updates every 30 min.", time: "13:47", type: "received" },
+            { sender: "Emma L.", message: "My phone is at 15%. Switching to ultra low power mode.", time: "13:50", type: "received" },
+            { sender: "You", message: "Gate A15 has some charging stations working on emergency power", time: "13:52", type: "sent" },
+            { sender: "Sofia M.", message: "Thanks! Heading there now.", time: "13:53", type: "received" }
+        ];
+        
+        // DOM Elements
+        const setupForm = document.getElementById('setup-form');
+        const setupScreen = document.getElementById('setup-screen');
+        const mainScreen = document.getElementById('main-screen');
+        const statusFlight = document.getElementById('status-flight');
+        const statusDestination = document.getElementById('status-destination');
+        const statusDeparture = document.getElementById('status-departure');
+        const batteryLevel = document.getElementById('battery-level');
+        const batteryPercent = document.getElementById('battery-percent');
+        const connectedCount = document.getElementById('connected-count');
+        const nearbyUsers = document.getElementById('nearby-users');
+        const messagesContainer = document.getElementById('messages-container');
+        const messageForm = document.getElementById('message-form');
+        const messageInput = document.getElementById('message-input');
+        const refreshNetwork = document.getElementById('refresh-network');
+        const tabs = document.querySelectorAll('.tab');
+        const navButtons = document.querySelectorAll('.nav-button');
+        const reportBtn = document.getElementById('report-btn');
+        
+        // Initialize battery level
+        let battery = {
+            level: 0.85,
+            charging: false,
+            updateInterval: null
+        };
+        
+        // Update battery display
+        function updateBattery() {
+            batteryLevel.style.width = `${battery.level * 100}%`;
+            batteryPercent.textContent = `${Math.round(battery.level * 100)}%`;
+            
+            // Change color based on level
+            if (battery.level <= 0.2) {
+                batteryLevel.style.backgroundColor = 'var(--danger)';
+            } else if (battery.level <= 0.5) {
+                batteryLevel.style.backgroundColor = 'var(--warning)';
+            } else {
+                batteryLevel.style.backgroundColor = 'var(--success)';
+            }
+            
+            // Slowly decrease battery to simulate usage
+            if (!battery.charging) {
+                battery.level = Math.max(0.01, battery.level - 0.005);
+            }
+        }
+        
+        // Start battery simulation
+        function startBatterySimulation() {
+            updateBattery();
+            battery.updateInterval = setInterval(updateBattery, 30000); // Update every 30 seconds
+        }
+        
+        // Initialize messages
+        function initializeMessages() {
+            messagesContainer.innerHTML = '';
+            sampleMessages.forEach(msg => {
+                const messageEl = document.createElement('div');
+                messageEl.className = `message ${msg.type}`;
+                messageEl.innerHTML = `
+                    <div class="sender">${msg.sender}</div>
+                    <div class="content">${msg.message}</div>
+                    <div class="time">${msg.time}</div>
+                `;
+                messagesContainer.appendChild(messageEl);
+            });
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        // Initialize nearby users
+        function initializeNearbyUsers() {
+            nearbyUsers.innerHTML = '';
+            sampleUsers.forEach(user => {
+                const userEl = document.createElement('div');
+                userEl.className = 'user-badge';
+                userEl.innerHTML = `
+                    <div class="user-status" style="background-color: ${user.status === 'online' ? 'var(--success)' : '#999'}"></div>
+                    ${user.name} (${user.flight})
+                `;
+                nearbyUsers.appendChild(userEl);
+            });
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 5000);
+        }
+        
+        // Tab switching
+        function switchTab(tabId) {
+            // Update tab buttons
+            tabs.forEach(tab => {
+                if (tab.dataset.tab === tabId) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+            
+            // Update nav buttons
+            navButtons.forEach(btn => {
+                if (btn.dataset.tab === tabId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Update content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                if (content.id === `${tabId}-tab`) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+        }
+        
+        // Event Listeners
+        setupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const flight = document.getElementById('flight').value;
+            const destination = document.getElementById('destination').value;
+            const departure = document.getElementById('departure').value;
+            
+            // Update status tab with flight info
+            statusFlight.textContent = flight;
+            statusDestination.textContent = destination;
+            statusDeparture.textContent = departure;
+            
+            // Hide setup, show main screen
+            setupScreen.style.display = 'none';
+            mainScreen.style.display = 'flex';
+            
+            // Initialize components
+            startBatterySimulation();
+            initializeMessages();
+            initializeNearbyUsers();
+            
+            // Show welcome notification
+            showNotification(`Welcome ${name}! Connected to local emergency network.`);
+        });
+        
+        // Tab switching via top tabs
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                switchTab(this.dataset.tab);
+            });
+        });
+        
+        // Tab switching via bottom nav
+        navButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                switchTab(this.dataset.tab);
+            });
+        });
+        
+        // Send message
+        messageForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const messageText = messageInput.value.trim();
+            if (!messageText) return;
+            
+            // Create new message
+            const now = new Date();
+            const time = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+            
+            const messageEl = document.createElement('div');
+            messageEl.className = 'message sent';
+            messageEl.innerHTML = `
+                <div class="sender">You</div>
+                <div class="content">${messageText}</div>
+                <div class="time">${time}</div>
+            `;
+            messagesContainer.appendChild(messageEl);
+            
+            // Clear input and scroll to new message
+            messageInput.value = '';
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // Simulate response after a delay (for demo purposes)
+            if (Math.random() > 0.5) {
+                setTimeout(() => {
+                    const names = ['Carlos R.', 'Emma L.', 'Sofia M.', 'Jamal K.'];
+                    const responses = [
+                        'Thanks for the update!',
+                        'Any news about gate changes?',
+                        'Has anyone heard when power will be back?',
+                        'I found some working outlets at gate B12',
+                        'The snack bar near gate A3 is giving out free water'
+                    ];
+                    
+                    const responseMsg = document.createElement('div');
+                    responseMsg.className = 'message received';
+                    responseMsg.innerHTML = `
+                        <div class="sender">${names[Math.floor(Math.random() * names.length)]}</div>
+                        <div class="content">${responses[Math.floor(Math.random() * responses.length)]}</div>
+                        <div class="time">${time}</div>
+                    `;
+                    messagesContainer.appendChild(responseMsg);
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                    
+                    // Show notification
+                    showNotification('New message received');
+                }, 1500 + Math.random() * 3000);
+            }
+        });
+        
+        // Refresh network
+        refreshNetwork.addEventListener('click', function() {
+            this.textContent = 'Scanning...';
+            
+            setTimeout(() => {
+                // Simulate finding new users
+                const newUser = {
+                    id: 6,
+                    name: "Alex T.", 
+                    flight: "UA123", 
+                    status: "online"
+                };
+                
+                sampleUsers.push(newUser);
+                initializeNearbyUsers();
+                
+                // Update connected count
+                connectedCount.textContent = sampleUsers.filter(u => u.status === 'online').length;
+                
+                this.textContent = 'Refresh Network';
+                showNotification('Network refreshed! Found 1 new user.');
+            }, 2000);
+        });
+        
+        // Report button
+        reportBtn.addEventListener('click', function() {
+            // Simple alert for demo purposes
+            const info = prompt('Share important information with the network:');
+            if (info && info.trim()) {
+                showNotification('Information shared with the network!');
+                
+                // Add as a message
+                const now = new Date();
+                const time = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+                
+                const messageEl = document.createElement('div');
+                messageEl.className = 'message sent';
+                messageEl.innerHTML = `
+                    <div class="sender">You (ALERT)</div>
+                    <div class="content">${info}</div>
+                    <div class="time">${time}</div>
+                `;
+                messagesContainer.appendChild(messageEl);
+            }
+        });
+    </script>
+</body>
+</html>
